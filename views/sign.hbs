@@ -1,0 +1,109 @@
+<style>
+    .content {
+        height: 900px;
+        width: 1000px;
+    }
+
+    form {
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: column;
+        width: 910px;
+        height: auto;
+        padding: 5px 40px;
+        border-bottom: 2px solid #7e7e7e;
+        border-radius: 5px;
+    }
+
+    .content input {
+        font-family: 'InvolveRegular';
+    }
+
+    #form-title {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: #4D4D4D;
+    }
+</style>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<link rel="stylesheet" href="../public/Datepicker.js-master/dist/css/datepicker.material.css">
+<script src="../public/Datepicker.js-master/dist/datepicker.js"></script>
+<content id="s-content" class="content">
+    <h2 class="page-title">Запись на прием к врачу</h2>
+    <div class="pt-line"></div>
+    <h3 id="form-title">Форма записи</h3>
+    <form class="sign-form" action="/sign" method="POST">
+        <div class="input-field">
+            <label class="lble" for="signType">Запись:</label>
+            <select type="text" id="signType" name="signType" class="inpt-sign" required>
+                <option value="Free">Бесплатная</option>
+                <option value="Buy">Платная</option>
+            </select>
+            {{!-- <input type="text" id="signType" name="signType"><br><br> --}}
+        </div>
+        <div class="input-field">
+            <label class="lble" for="doc">Врач:</label>
+            <select type="text" id="doc" name="doc" class="inpt-sign" required>
+                <option value="{{med_1}}">{{med_1}}</option>
+                <option value="{{med_2}}">{{med_2}}</option>
+                <option value="{{med_3}}">{{med_3}}</option>
+                <option value="{{med_4}}">{{med_4}}</option>
+                <option value="{{med_5}}">{{med_5}}</option>
+                <option value="{{med_6}}">{{med_6}}</option>
+                <option value="{{med_7}}">{{med_7}}</option>
+                <option value="{{med_8}}">{{med_8}}</option>
+                <option value="{{med_9}}">{{med_9}}</option>
+                <option value="{{med_10}}">{{med_10}}</option>
+            </select>
+            {{!-- <input type="text" id="doc" name="doc"><br><br> --}}
+        </div>
+        <div class="input-field">
+            <label class="lble" for="date">Дата:</label>
+            {{#if signError}}
+                <input type="text" id="date" name="date" class="inpt-sign-invalid" placeholder="Выберите дату" readonly required>
+            {{else}}
+                <input type="text" id="date" name="date" class="inpt-sign" readonly required>
+            {{/if}}
+            <script>
+                var datepicker = new Datepicker('#date', {inline: true});
+            </script>
+            {{!-- <input type="text" id="date" name="date"><br><br> --}}
+        </div>
+        <div class="input-field">
+            <label class="lble" for="time">Время:</label>
+            {{#if signError}}
+                <input type="text" id="time" name="time" class="inpt-sign-invalid" placeholder="Выберите время" readonly required><br><br>
+            {{else}}
+                <input type="text" id="time" name="time" class="inpt-sign" readonly required><br><br>
+            {{/if}}
+        </div>
+        <div class="wrapper-time">
+            <div class="content-time">
+                <input class="case-time" value="09:00" type="button"></input>
+                <input class="case-time" value="09:30" type="button"></input>
+                <input class="case-time" value="10:00" type="button"></input>
+                <input class="case-time" value="10:30" type="button"></input>
+                <input class="case-time" value="11:00" type="button"></input>
+                <input class="case-time" value="11:30" type="button"></input>
+                <input class="case-time" value="12:00" type="button"></input>
+                <input class="case-time" value="13:00" type="button"></input>
+                <input class="case-time" value="14:00" type="button"></input>
+                <input class="case-time" value="15:00" type="button"></input>
+                <script>
+                    $('input.case-time').on('click', function() {
+                        $('#time').val( $(this).val() );
+                    });
+                </script>
+            </div>
+            <p id="info-time">*запись возможна только на ближайшую неделю</p>
+        </div>
+        <input type="hidden" name="_csrf" value="{{csrf}}">
+        {{!-- {{#if signError}}
+            <p class="alert">{{signError}}</p>
+        {{/if}} --}}
+        <div class="btn-field-sign">
+            <input id="btn-sign" class="btn" type="submit" value="Записаться" required>
+        </div>
+    </form>
+</content>

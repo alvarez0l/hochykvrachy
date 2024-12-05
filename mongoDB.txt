@@ -1,0 +1,6 @@
+admin
+
+oGjp24HfB8Do0Pry
+
+
+mongodb+srv://admin:<password>@cluster109.ciqquwb.mongodb.net/?retryWrites=true&w=majority&appName=Cluster109

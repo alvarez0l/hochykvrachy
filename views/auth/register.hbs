@@ -1,0 +1,68 @@
+<style>
+    body {
+        background-color: #36BDAD;
+    }
+
+    .footer {
+        background-image: none;
+    }
+</style>
+<content class="content">
+    <div class="wrap-reg">
+        <h2>Регистрация нового пользователя</h2>
+        {{#if regError}}
+            <p class="alert">{{regError}}</p>
+        {{/if}}
+        <form action="/auth/register" method="POST">
+            {{#if regError}}
+                <div class="input-field">
+                    <input id="name" name="name" type="text" class="inpt-inv" placeholder="Имя" required><br>
+                </div>
+                <div class="input-field">
+                    <input id="l_name" name="l_name" type="text" class="inpt-inv" placeholder="Фамилия" required><br>
+                </div>
+                <div class="input-field">
+                    <input id="s_name" name="s_name" type="text" class="inpt-inv" placeholder="Отчество" required><br>
+                </div>
+                <div class="input-field">
+                    <input id="email" name="email" type="email" class="inpt-inv" placeholder="pochta@hkv.ru" required><br>
+                </div>
+                <div class="input-field">
+                    <input id="phone" name="phone" type="text" class="inpt-inv" placeholder="+79789009090" required><br>
+                </div>
+                <div class="input-field">
+                    <input id="password" name="password" type="password" class="inpt-inv" placeholder="Пароль" required><br>
+                </div>
+                <div class="input-field">
+                    <input id="repeat" name="repeat" type="password" class="inpt-inv" placeholder="Повторите пароль" required><br>
+                </div>
+            {{else}}
+                <div class="input-field">
+                    <input id="name" name="name" type="text" class="inpt" placeholder="Имя" required><br>
+                </div>
+                <div class="input-field">
+                    <input id="l_name" name="l_name" type="text" class="inpt" placeholder="Фамилия" required><br>
+                </div>
+                <div class="input-field">
+                    <input id="s_name" name="s_name" type="text" class="inpt" placeholder="Отчество" required><br>
+                </div>
+                <div class="input-field">
+                    <input id="email" name="email" type="email" class="inpt" placeholder="pochta@hkv.ru" required><br>
+                </div>
+                <div class="input-field">
+                    <input id="phone" name="phone" type="text" class="inpt" placeholder="+79789009090" required><br>
+                </div>
+                <div class="input-field">
+                    <input id="password" name="password" type="password" class="inpt" placeholder="Пароль" required><br>
+                </div>
+                <div class="input-field">
+                    <input id="repeat" name="repeat" type="password" class="inpt" placeholder="Повторите пароль" required><br>
+                </div>
+            {{/if}}
+            <input type="hidden" name="_csrf" value="{{csrf}}">
+            <div class="btn-field-reg">
+                <button id="btn-login-reg" class="btn">Зарегистрироваться</button>
+            </div>
+        </form>
+    </div>
+</content>

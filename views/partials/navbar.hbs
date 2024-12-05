@@ -1,0 +1,55 @@
+<header class="header">
+    <div class="wrapper">
+        <a href="/"><div class="logo"></div></a>
+        <div class="name-block">
+            <div class="title">Хочу к врачу!</div>
+            <div class="name">Феодосийский портал<br>медицинских услуг</div>
+        </div>
+        <div class="burg-menu"></div>
+        <div class="wrap-menu">
+            <nav class="nav">
+                <ul class="menu">
+                    {{#if isHome}}
+                        <li class="active"><a href="/">Об организации</a></li>
+                    {{else}}
+                        <li><a href="/">Об организации</a></li>
+                    {{/if}}
+
+                    {{#if isAuthors}}
+                        <li class="active"><a href="/authors">Авторы</a></li>
+                    {{else}}
+                        <li><a href="/authors">Авторы</a></li>
+                    {{/if}}
+
+                    {{#if isAuth}}
+                        {{#if isSchedule}}
+                            <li class="active"><a href="/schedule">Расписание</a></li>
+                        {{else}}
+                            <li><a href="/schedule">Расписание</a></li>
+                        {{/if}}
+                        
+                        {{#if isSign}}
+                            <li class="active"><a id="sign" href="/sign">Записаться</a></li>
+                        {{else}}
+                            <li><a id="sign" href="/sign">Записаться</a></li>
+                        {{/if}}
+
+                        {{#if isAccount}}
+                           <a href="/account/medcard"><div class="acc-logo"></div></a>
+                        {{else}}
+                           <a href="/account/medcard"><div class="acc-logo"></div></a>
+                        {{/if}}
+                        
+                    {{else}}
+                        {{#if isLogin}}
+                            <a href="/auth/login"><div class="acc-logo-nonauth"></div></a>
+                        {{else}}
+                            <a href="/auth/login"><div class="acc-logo-nonauth"></div></a>
+                        {{/if}}
+                    {{/if}}
+                </ul>
+            </nav>
+        </div>
+        <script src="/public/nav.js"></script>
+    </div>
+</header>

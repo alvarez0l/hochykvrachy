@@ -1,0 +1,87 @@
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="/public/app.js"></script>
+<style>
+    .content {
+        width: 1250px;
+        height: 1000px;
+    }
+
+    .wrap-menu {
+        padding: 30px 0;
+        float: left;
+    }
+
+</style>
+<content class="content">
+    <h2 class="acc-title">Личный кабинет</h2>
+    <div class="wrap-menu">
+        <nav>
+            <ul id="acc-menu" class="menu">
+                <li><a href="/account/medcard">Мед. карта</a></li>
+                <div class="for"></div>
+                <li><a href="/account/personal">Личные данные</a></li>
+                <li><a href="/account/security">Безопасность</a></li>
+                <li id="logout"><a href="/auth/logout">Выйти из учетной записи</a></li>
+            </ul>
+        </nav>
+    </div>
+    <div class="med-card">
+        <h2 class="med-name">{{ user_lName }} {{ user_name }} {{ user_sName }}</h2>
+        <div class="med-header">
+            <ul>
+                <li>ФИО: {{ user_lName }} {{ user_name}} {{ user_sName }}</li>
+                <li>Д/р: 01/01/1999 </li>
+                <li>Пол: Мужской</li>
+                <li>Соц. статус: Работающий</li>
+                <li>ИНН: 0000000</li>
+                <li>СНИЛС: 0000000</li>
+                <li>Регистрация: Республика Крым, г.Феодосия</li>
+                <li>Проживает: Республика Крым, г.Феодосия</li>
+                <li>Телефон: +79789009090</li>
+                <li>Полис: 0000000</li>
+                <li>Документ: Паспорт</li>
+            </ul>
+            <div class="wrap-u-png">
+                <div class="user-png"></div>
+            </div>
+        </div>
+        <!-- Tab links -->
+        <div class="tabs-wrapper">
+            <div class="tab">
+                <div class="tablinks-title">История посещений</div>
+                <button class="tablinks" onclick="openCity(event, 'London')">10.04.24 ГБУЗ РК ФМЦ</button>
+                <button class="tablinks" onclick="openCity(event, 'Paris')">15.02.24 ГБУЗ РК ФМЦ</button>
+                <button class="tablinks" onclick="openCity(event, 'Tokyo')">21.12.23 ГБУЗ РК ФМЦ</button>
+            </div>
+
+            <!-- Tab content -->
+            <div id="London" class="tabcontent">
+                <h3 class="tabcontent-title">Случай амбулаторного лечения №12303</h3>
+                <p>10/04/24 Пациент обратился в ФМЦ №1 с симптомами гриппа</p>
+                <p>Мед.данные пациента. Мед.данные пациента. Мед.данные пациента.</p>
+            </div>
+
+            <div id="Paris" class="tabcontent">
+                <h3 class="tabcontent-title">Случай амбулаторного лечения №10102</h3>
+                <p>15/02/24 Пациент обратился в ФМЦ №1 с симптомами гриппа</p>
+                <p>Мед.данные пациента. Мед.данные пациента. Мед.данные пациента.</p>
+            </div>
+
+            <div id="Tokyo" class="tabcontent">
+                <h3 class="tabcontent-title">Случай амбулаторного лечения №9829</h3>
+                <p>21/12/23 Пациент обратился в ФМЦ №1 с симптомами гриппа</p>
+                <p>Мед.данные пациента. Мед.данные пациента. Мед.данные пациента.</p>
+            </div>
+        </div>
+        {{!-- <div class="tabs-wrapper">
+            <div class="tabs">
+                <span class="tab">Test 11</span>
+                <span class="tab">Test 22</span>
+            </div>
+            <div class="tabs-content">
+                <div id="med-case1" class="tabs-item">Test 1</div>
+                <div id="med-case2" class="tabs-item">Test 2</div>
+            </div>
+        </div> --}}
+    </div>
+</content>

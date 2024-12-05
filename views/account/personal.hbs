@@ -1,0 +1,41 @@
+<style>
+    .content {
+        width: 1250px;
+        height: 1000px;
+    }
+
+    .wrap-menu {
+        padding: 30px 0;
+        float: left;
+    }
+
+</style>
+<content class="content">
+    <h2 class="acc-title">Личный кабинет</h2>
+    <div class="wrap-menu">
+        <nav>
+            <ul id="acc-menu" class="menu">
+                <li><a href="/account/medcard">Мед. карта</a></li>
+                <li><a href="/account/personal">Личные данные</a></li>
+                <div class="for"></div>
+                <li><a href="/account/security">Безопасность</a></li>
+                <li id="logout"><a href="/auth/logout">Выйти из учетной записи</a></li>
+            </ul>
+        </nav>
+    </div>
+    <div class="med-card">
+        <div class="per-head">
+            <h2 class="med-name">Личные данные пользователя</h2>
+            <div id="med-name-id">#{{ user_id }}</div>
+        </div>
+        <div class="med-header">
+            <ul>
+                <li>Имя: {{ user_name }}</li>
+                <li>Фамилия: {{ user_sName }}</li>
+                <li>Отчество: {{ user_lName }}</li>
+                <li>Моб. телефон: {{ user_tel }}</li>
+                <li>Электронная почта: {{ user_email }}</li>
+            </ul>
+        </div>
+    </div>
+</content>

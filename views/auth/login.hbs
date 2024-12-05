@@ -1,0 +1,61 @@
+<content class="content">
+    <style>
+        body {
+            background-color: #36BDAD;
+        }
+
+        h2 {
+            padding-top: 10px;
+        }
+
+        .input-field {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            padding: 13px 20px;
+        }
+
+        .lble {
+            padding-bottom: 5px;
+        }
+
+        #regs {
+            padding-bottom: 10px;
+        }
+
+        .footer {
+            background-image: none;
+        }
+
+
+    </style>
+    <div class="wrap-auth">
+        <h2>Авторизация</h2>
+        {{#if logError}}
+            <p class="alert">{{logError}}</p>
+        {{/if}}
+        <form action="/auth/login" method="POST">
+            <div class="input-field">
+                <label class="lble" for="email">Логин</label>
+                {{#if logError}}
+                    <input id="email" name="email" type="email" class="inpt-invalid" required>
+                {{else}}
+                    <input id="email" name="email" type="email" class="inpt-login" required>
+                {{/if}}
+            </div>
+            <div class="input-field">
+                <label class="lble" for="password">Пароль</label>
+                {{#if logError}}
+                    <input id="password" name="password" type="password" class="inpt-invalid" required>
+                {{else}}
+                    <input id="password" name="password" type="password" class="inpt-login" required>
+                {{/if}}
+            </div>
+            <input type="hidden" name="_csrf" value="{{csrf}}">
+            <div class="btn-field">
+                <button id="btn-login-reg" class="btn">Войти</button>
+            </div>
+        </form>
+        <p id="regs">Нет учетной записи? <a href="/auth/register">Зарегистрироваться</a></p>
+    </div>
+</content>

@@ -1,0 +1,96 @@
+<style>
+    .page-title {
+        padding-left: 25px;
+    }
+    .pt-line {
+        width: 305px;
+    }
+
+    #info-time {
+        display: flex;
+        margin: 0;
+        padding: 7px 30px;
+        font-size: 13px;
+        color: #4D4D4D;
+    }
+</style>
+<content class="content">
+    <h2 class="page-title">Расписание врачей</h2>
+    <div class="pt-line"></div>
+    <div class="wrapper-table">
+        <table class='schedule-table'>
+            <thead>
+                <tr>
+                    <th>ФИО</th>
+                    <th>Должность</th>
+                    <th>Дни приема</th>
+                    <th>Время приема</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>{{mp_1.fio}}</td>
+                    <td>{{mp_1.jobtitle}}</td>
+                    <td>{{mp_1.date}}</td>
+                    <td>{{mp_1.time}}</td>
+                </tr>
+                <tr>
+                    <td>{{mp_2.fio}}</td>
+                    <td>{{mp_2.jobtitle}}</td>
+                    <td>{{mp_2.date}}</td>
+                    <td>{{mp_2.time}}</td>
+                </tr>
+                <tr>
+                    <td>{{mp_3.fio}}</td>
+                    <td>{{mp_3.jobtitle}}</td>
+                    <td>{{mp_3.date}}</td>
+                    <td>{{mp_3.time}}</td>
+                </tr>
+                <tr>
+                    <td>{{mp_4.fio}}</td>
+                    <td>{{mp_4.jobtitle}}</td>
+                    <td>{{mp_4.date}}</td>
+                    <td>{{mp_4.time}}</td>
+                </tr>
+                <tr>
+                    <td>{{mp_5.fio}}</td>
+                    <td>{{mp_5.jobtitle}}</td>
+                    <td>{{mp_5.date}}</td>
+                    <td>{{mp_5.time}}</td>
+                </tr>
+                <tr>
+                    <td>{{mp_6.fio}}</td>
+                    <td>{{mp_6.jobtitle}}</td>
+                    <td>{{mp_6.date}}</td>
+                    <td>{{mp_6.time}}</td>
+                </tr>
+                <tr>
+                    <td>{{mp_7.fio}}</td>
+                    <td>{{mp_7.jobtitle}}</td>
+                    <td>{{mp_7.date}}</td>
+                    <td>{{mp_7.time}}</td>
+                </tr>
+                <tr>
+                    <td>{{mp_8.fio}}</td>
+                    <td>{{mp_8.jobtitle}}</td>
+                    <td>{{mp_8.date}}</td>
+                    <td>{{mp_8.time}}</td>
+                </tr>
+                <tr>
+                    <td>{{mp_9.fio}}</td>
+                    <td>{{mp_9.jobtitle}}</td>
+                    <td>{{mp_9.date}}</td>
+                    <td>{{mp_9.time}}</td>
+                </tr>
+                <tr>
+                    <td>{{mp_10.fio}}</td>
+                    <td>{{mp_10.jobtitle}}</td>
+                    <td>{{mp_10.date}}</td>
+                    <td>{{mp_10.time}}</td>
+                </tr>
+            </tbody>
+        </table>
+        <p id="info-time">*расписание обновляется ежедневно</p>
+    </div>
+    <script src="../public/script.js"></script>
+</content>
