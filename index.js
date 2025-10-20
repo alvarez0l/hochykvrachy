@@ -20,7 +20,7 @@ const authRoutes = require('./routes/auth');
 
 const varMiddleware = require('./middleware/variables');
 
-const MONGODB_URI = 'mongodb+srv://admin:oGjp24HfB8Do0Pry@cluster109.ciqquwb.mongodb.net/blog?retryWrites=true&w=majority&appName=Cluster109';
+const MONGODB_URI = 'PASTE_HERE_MONGODB';
 
 mongoose
     .connect(MONGODB_URI)  //Подключение к БД
